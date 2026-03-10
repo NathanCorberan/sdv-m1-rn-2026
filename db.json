@@ -1,0 +1,65 @@
+{
+  "todoList": [
+    {
+      "id": "1",
+      "title": "Acheter du pain",
+      "status": "TODO"
+    },
+    {
+      "id": "2",
+      "title": "Faire les courses",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "3",
+      "title": "Appeler le medecin",
+      "status": "DONE"
+    },
+    {
+      "id": "4",
+      "title": "Envoyer le devoir React Native",
+      "status": "TODO"
+    },
+    {
+      "id": "5",
+      "title": "Preparer la presentation",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "6",
+      "title": "Reserver un rendez-vous",
+      "status": "DONE"
+    },
+    {
+      "id": "7",
+      "title": "Mettre a jour le CV",
+      "status": "TODO"
+    },
+    {
+      "id": "8",
+      "title": "Corriger les exercices",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "id": "9",
+      "title": "Nettoyer l'appartement",
+      "status": "DONE"
+    },
+    {
+      "id": "10",
+      "title": "Planifier la semaine",
+      "status": "TODO"
+    },
+    {
+      "id": "d9cd",
+      "title": "Toto",
+      "status": "TODO"
+    },
+    {
+      "id": "18b3",
+      "title": "Pd",
+      "status": "DONE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
