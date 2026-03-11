@@ -1,15 +1,13 @@
-import Constants from "expo-constants";
-
-export type TodoApiStatus = "TODO" | "IN_PROGRESS" | "DONE";
-
-export interface Todo {
-    id: number;
-    title: string;
-    status: TodoApiStatus;
-}
+import type { Todo, TodoApiStatus } from "../model/todo/types";
 
 function getBaseUrl() {
-    return "http://localhost:3000";
+    const apiBaseUrl = process.env.EXPO_PUBLIC_API_BASE_URL?.trim();
+
+    if (!apiBaseUrl) {
+        throw new Error("La variable EXPO_PUBLIC_API_BASE_URL est manquante dans le fichier .env.");
+    }
+
+    return apiBaseUrl.replace(/\/+$/, "");
 }
 
 async function fetchWithTimeout(input: string, init?: RequestInit) {
@@ -51,3 +49,5 @@ export async function createTodo(payload: Omit<Todo, "id">): Promise<Todo> {
 
     return response.json();
 }
+
+export type { Todo, TodoApiStatus };

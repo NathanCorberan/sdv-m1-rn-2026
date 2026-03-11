@@ -1,9 +1,9 @@
 import { Stack, useRouter } from "expo-router";
 import { useState } from "react";
 import { ActivityIndicator, Alert, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import { TodoStatus } from "../components/todoCard/TodoCard";
-import { TodoApiStatus } from "../api/todo";
 import { useCreateTodo } from "../hooks/todo/useTodos";
+import { TodoStatus } from "../components/todoCard/TodoCard";
+import type { TodoApiStatus } from "../model/todo/types";
 
 const statusOptions = [TodoStatus.TODO, TodoStatus.IN_PROGRESS, TodoStatus.DONE];
 const statusToApiValue: Record<TodoStatus, TodoApiStatus> = {
@@ -29,7 +29,10 @@ export default function CreateTaskScreen() {
             await submit(title.trim(), statusToApiValue[status]);
             router.back();
         } catch {
-            Alert.alert("Erreur", "La tache n'a pas pu etre creee. Verifie que json-server tourne.");
+            Alert.alert(
+                "Erreur",
+                "La tache n'a pas pu etre creee. Verifie `EXPO_PUBLIC_API_BASE_URL` et le serveur json-server.",
+            );
         }
     }
 

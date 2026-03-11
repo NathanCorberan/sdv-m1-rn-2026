@@ -1,6 +1,7 @@
 import { useIsFocused } from "@react-navigation/native";
 import { useCallback, useEffect, useState } from "react";
-import { createTodo, fetchTodos, Todo, TodoApiStatus } from "../../api/todo";
+import { createTodo, fetchTodos } from "../../api/todo";
+import type { Todo, TodoApiStatus } from "../../model/todo/types";
 
 export function useTodos() {
     const isFocused = useIsFocused();
